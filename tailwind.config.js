@@ -9,14 +9,19 @@ module.exports = {
     extend: {
       colors: {
         navy: {
-          900: "#0a0e27",
-          800: "#111827",
-          700: "#1e2a4a",
+          900: "#0b1929",
+          800: "#0f2942",
+          700: "#14365b",
+        },
+        gold: {
+          DEFAULT: "#c8a951",
+          light: "#e8d5a3",
+          dark: "#a88a3a",
         },
       },
       backgroundImage: {
         "hero-pattern":
-          "linear-gradient(135deg, #0a0e27 0%, #111827 50%, #1e2a4a 100%)",
+          "linear-gradient(135deg, #0b1929 0%, #0f2942 50%, #14365b 100%)",
       },
     },
   },
