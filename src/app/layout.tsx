@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Native Enterprise Week — Team 31",
+  title: "GlobeIntel — AI-Powered Global Intelligence",
   description:
-    "Day 1 of AI Native Enterprise Week: From AI Hype to Business Architecture",
+    "Stay ahead of global developments with AI-driven geopolitical briefings. Real-time insights into international relations, conflicts, diplomacy, and strategic shifts.",
 };
 
 export default function RootLayout({
