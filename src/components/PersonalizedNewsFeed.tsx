@@ -9,6 +9,7 @@ interface NewsCard {
   title: string;
   summary: string;
   category: string;
+  careerImpact: string;
   relevance: "relevant" | "not_relevant" | null;
 }
 

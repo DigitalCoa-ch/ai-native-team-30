@@ -2,7 +2,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { INTELLIGENCE_DB, IntelligenceItem } from "../../../data/intelligence-types";
+import { INTELLIGENCE_DB } from "../../../data/intelligence";
+import type { IntelligenceItem } from "../../../data/intelligence-types";
 import {
   ArrowLeft, Clock, AlertTriangle, Minus, CheckCircle2,
   ExternalLink, Calendar, Tag, Globe, X, ChevronRight, Shield,
@@ -59,7 +60,7 @@ export default function ArticlePage() {
 
   useEffect(() => {
     const found = INTELLIGENCE_DB.find((i) => i.id === params.id);
-    setItem(found || null);
+    setItem(found as IntelligenceItem || null);
     setTimeout(() => setVisible(true), 50);
   }, [params.id]);
 
