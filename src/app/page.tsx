@@ -296,7 +296,6 @@ function SectorsSection() {
   );
 }
       {/* Personalized News Feed */}
-      <PersonalizedNewsFeed />
 
 // ── How It Works ──────────────────────────────────────────────────────────────
 function WorkflowStep({ step, index }: { step: typeof WORKFLOW_STEPS[0]; index: number }) {
@@ -463,6 +462,7 @@ export default function Home() {
       <Hero />
       <IntelligenceSection />
       <SectorsSection />
+      <PersonalizedNewsFeed />
       <HowItWorksSection />
       <WhyItMattersSection />
       <ContactSection />
