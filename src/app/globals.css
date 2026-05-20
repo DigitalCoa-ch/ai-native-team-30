@@ -16,7 +16,65 @@
   --text-muted: #64748b;
   --card-bg: rgba(255, 255, 255, 0.04);
   --card-border: rgba(255, 255, 255, 0.08);
+  --bg-gradient-start: #050d18;
+  --bg-gradient-mid1: #0b1929;
+  --bg-gradient-mid2: #0f2942;
+  --bg-gradient-end: #14365b;
+  --section-bg: transparent;
+  --body-bg: #e2e8f0;
+  --card-bg-solid: rgba(255, 255, 255, 0.05);
+  --glass-bg: rgba(255, 255, 255, 0.05);
 }
+
+/* Light mode overrides */
+html.light-mode {
+  --bg-gradient-start: #ffffff;
+  --bg-gradient-mid1: #f8fafc;
+  --bg-gradient-mid2: #f1f5f9;
+  --bg-gradient-end: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --card-bg: rgba(15, 23, 42, 0.06);
+  --card-border: rgba(15, 23, 42, 0.12);
+  --body-bg: #ffffff;
+  --card-bg-solid: rgba(15, 23, 42, 0.04);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+}
+
+html.light-mode body {
+  background: linear-gradient(160deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid1) 40%, var(--bg-gradient-mid2) 70%, var(--bg-gradient-end) 100%);
+  color: var(--text-primary);
+}
+
+html.light-mode .glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+}
+
+html.light-mode .text-white { color: #0f172a !important; }
+html.light-mode .text-slate-400 { color: #64748b; }
+html.light-mode .text-slate-300 { color: #475569; }
+html.light-mode .text-slate-500 { color: #94a3b8; }
+html.light-mode .text-slate-600 { color: #64748b; }
+html.light-mode .intel-card { border-color: rgba(200,169,81,0.2); }
+html.light-mode .sector-card { border-color: rgba(200,169,81,0.15); }
+html.light-mode .glass-card { border-color: rgba(15,23,42,0.1); }
+html.light-mode footer { border-color: rgba(15,23,42,0.08); }
+html.light-mode input { background: rgba(15,23,42,0.05) !important; border-color: rgba(15,23,42,0.15) !important; color: #0f172a !important; }
+html.light-mode .intel-card { background: rgba(255,255,255,0.7); }
+html.light-mode .sector-card { background: rgba(255,255,255,0.8); }
+html.light-mode .glass-card { background: rgba(255,255,255,0.9); }
+html.light-mode .section-bg { background: rgba(241,245,249,0.5) !important; }
+html.light-mode .text-gradient-gold { background: linear-gradient(135deg, #c8a951, #a88a3a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+html.light-mode .hero-badge { background: rgba(200,169,81,0.1); border-color: rgba(200,169,81,0.2); }
+html.light-mode .gold-btn { color: #050d18; }
+html.light-mode .form-input { background: rgba(15,23,42,0.04); border-color: rgba(15,23,42,0.12); color: #0f172a; }
+html.light-mode ::-webkit-scrollbar-track { background: #f1f5f9; }
+html.light-mode ::-webkit-scrollbar-thumb { background: #cbd5e1; }
+html.light-mode .social-icon { background: rgba(15,23,42,0.06); border-color: rgba(15,23,42,0.1); }
 
 * {
   box-sizing: border-box;
