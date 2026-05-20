@@ -175,7 +175,7 @@ function SectorsSection() {
   return (
     <Section id="sectors">
       <SectionLabel>🗺️ Coverage Areas</SectionLabel>
-      <SectionTitle>Geopolitical Sectors</SectionTitle>
+      <SectionTitle>Sectors</SectionTitle>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {SECTORS.map((s, i) => <SectorCard key={s.title} sector={s} index={i} />)}
       </div>
