@@ -182,7 +182,7 @@ export default function LiveNewsFeed({ onRefresh }: LiveNewsFeedProps) {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-5xl font-black text-white tracking-tight"
             >
-              Global Intelligence — <span className="text-gradient-gold">24h Global Brief</span>
+              <span className="text-gradient-gold">24h Global Brief</span>
             </motion.h2>
           </div>
 
