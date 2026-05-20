@@ -4,61 +4,10 @@ import { useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import {
   Globe, Shield, Zap, TrendingUp, Eye, Cpu, BarChart3,
-  ChevronDown, ArrowRight, Clock, AlertTriangle, Minus,
-  CheckCircle2, Mail, Send, Star, Network, Atom,
+  ChevronDown, ArrowRight, Mail, Send, Star, Network, Atom, CheckCircle2,
 } from "lucide-react";
 import PersonalizedNewsFeed from "../components/PersonalizedNewsFeed";
-
-const INTELLIGENCE_ITEMS = [
-  {
-    category: "GEOPOLITICS",
-    headline: "NATO Summit Concludes with Expanded Eastern Flank Presence",
-    summary: "Alliance leaders agreed to increase troop deployments along the Baltic and Polish borders, signaling a strengthened deterrence posture amid ongoing tensions in the Eastern European theater.",
-    impact: "critical", time: "2h ago", sector: "Diplomacy",
-  },
-  {
-    category: "ENERGY",
-    headline: "OPEC+ Extends Production Cuts Through Q3 Amid Demand Uncertainty",
-    summary: "The cartel's decision to maintain output restrictions reflects concerns over global demand growth projections and aims to stabilize Brent crude prices above the $85 threshold.",
-    impact: "high", time: "5h ago", sector: "Energy",
-  },
-  {
-    category: "TECHNOLOGY",
-    headline: "G7 Nations Draft AI Governance Framework for Critical Infrastructure",
-    summary: "Proposed regulations would require mandatory risk assessments for AI deployments in power grids, financial systems, and defense networks across member states.",
-    impact: "high", time: "8h ago", sector: "Technology & AI",
-  },
-  {
-    category: "SECURITY",
-    headline: "UN Security Council Convenes Emergency Session on Red Sea Tensions",
-    summary: "Council members debated maritime security measures following the escalation of naval incidents disrupting global shipping lanes through one of the world's critical choke points.",
-    impact: "critical", time: "12h ago", sector: "Security",
-  },
-  {
-    category: "ECONOMY",
-    headline: "Federal Reserve Signals Patience on Rate Cuts as Inflation Holds Stubborn",
-    summary: "Fed officials cited persistent core PCE data above target, dampening market expectations for near-term monetary easing and causing Treasury yields to tick higher.",
-    impact: "medium", time: "14h ago", sector: "Global Economy",
-  },
-  {
-    category: "DIPLOMACY",
-    headline: "US-China Trade Talks End Without Major Breakthrough in Geneva",
-    summary: "Two days of high-level consultations produced limited concessions on tariff reductions, with both delegations emphasizing continued dialogue despite fundamental disagreements.",
-    impact: "high", time: "18h ago", sector: "Diplomacy",
-  },
-  {
-    category: "MARKETS",
-    headline: "Asian Markets Rally as Bank of Japan Signals Exit from Yield Curve Control",
-    summary: "Tokyo equities surged after BOJ Governor hinted at eventual policy normalization, sending the Nikkei to a fresh multi-year high while the yen strengthened against major currencies.",
-    impact: "medium", time: "21h ago", sector: "International Markets",
-  },
-  {
-    category: "CONFLICT",
-    headline: "Ceasefire Negotiations Stall as Parties Disagree on Enforcement Mechanism",
-    summary: "International mediators expressed concern after talks in a neutral capital broke down over monitoring provisions, though both sides pledged to maintain communication channels.",
-    impact: "critical", time: "23h ago", sector: "Security",
-  },
-];
+import LiveNewsFeed from "../components/LiveNewsFeed";
 
 const SECTORS = [
   { icon: Globe,      title: "Geopolitics",           desc: "Power dynamics, state relations, territorial shifts, and the forces shaping global order.",          color: "#3b82f6" },
@@ -66,7 +15,7 @@ const SECTORS = [
   { icon: TrendingUp, title: "Global Economy",         desc: "Trade wars, monetary policy, sanctions, supply chains, and economic power shifts.",                   color: "#22c55e" },
   { icon: Zap,        title: "Energy",                desc: "Oil, gas, renewables, energy transitions, and the geopolitical logic of resource flows.",               color: "#f59e0b" },
   { icon: Network,    title: "Diplomacy",              desc: "Alliances, summits, treaties, and the diplomatic architecture of international relations.",            color: "#8b5cf6" },
-  { icon: Atom,       title: "Technology & AI",       desc: "AI governance, cyber operations, semiconductor competition, and digital power.",                     color: "#06b6d4" },
+  { icon: Atom,       title: "Technology & AI",        desc: "AI governance, cyber operations, semiconductor competition, and digital power.",                     color: "#06b6d4" },
   { icon: BarChart3,  title: "International Markets", desc: "Currency movements, equity trends, commodity prices, and capital flow dynamics.",                     color: "#ec4899" },
 ];
 
@@ -74,15 +23,8 @@ const WORKFLOW_STEPS = [
   { label: "Input",           desc: "Real-time global data streams",            icon: Eye     },
   { label: "Analysis",        desc: "AI-powered pattern recognition",           icon: Cpu     },
   { label: "Categorization",  desc: "Sector tagging and prioritization",        icon: Network },
-  { label: "Key Insights",     desc: "Actionable briefings delivered",            icon: Star    },
+  { label: "Key Insights",    desc: "Actionable briefings delivered",            icon: Star    },
 ];
-
-const IMPACT_CONFIG: Record<string, { label: string; className: string }> = {
-  critical: { label: "Critical", className: "impact-critical" },
-  high:     { label: "High",     className: "impact-high"     },
-  medium:   { label: "Medium",   className: "impact-medium"   },
-  low:      { label: "Low",      className: "impact-low"      },
-};
 
 function Section({ id, children, className = "" }: { id: string; children: React.ReactNode; className?: string }) {
   return (
@@ -120,7 +62,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
     </motion.h2>
   );
 }
-// ── Hero ──────────────────────────────────────────────────────────────────────
+
 function Hero() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -140,7 +82,6 @@ function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_40%,transparent_40%,#050d18_100%)]" />
       <div className="absolute top-[8%] left-[12%] w-[500px] h-[500px] bg-gold/5 rounded-full blur-[160px] animate-glow-pulse" />
       <div className="absolute bottom-[12%] right-[8%] w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[130px] animate-glow-pulse" style={{ animationDelay: "-2s" }} />
-
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[500px] h-[500px] border border-white/[0.04] rounded-full animate-spin-slow" />
         <div className="absolute w-[700px] h-[700px] border border-white/[0.03] rounded-full animate-spin-slower" />
@@ -197,64 +138,11 @@ function Hero() {
     </section>
   );
 }
-// ── Intelligence Card ───────────────────────────────────────────────────────────
-function IntelligenceCard({ item, index }: { item: typeof INTELLIGENCE_ITEMS[0]; index: number }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-  const impact = IMPACT_CONFIG[item.impact] ?? IMPACT_CONFIG.medium;
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: (index % 4) * 0.1, ease: [0.4, 0, 0.2, 1] }}
-      className="intel-card group relative rounded-2xl p-6 glass-card cursor-default overflow-hidden"
-    >
-      <div className="intel-glow absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 transition-opacity duration-300 rounded-2xl" />
-
-      <div className="flex items-center justify-between mb-4">
-        <span className="text-[10px] font-bold tracking-[0.2em] text-gold/80 uppercase">{item.category}</span>
-        <div className="flex items-center gap-1.5 text-slate-500">
-          <Clock className="w-3 h-3" />
-          <span className="text-xs">{item.time}</span>
-        </div>
-      </div>
-
-      <div className="inline-block mb-4 px-2.5 py-1 rounded-md bg-white/[0.05] border border-white/[0.1] text-[10px] font-medium text-slate-400 tracking-wide">
-        {item.sector}
-      </div>
-
-      <h3 className="text-lg font-bold text-white mb-3 leading-snug group-hover:text-gold transition-colors duration-300">
-        {item.headline}
-      </h3>
-
-      <p className="text-sm text-slate-400 leading-relaxed mb-5 line-clamp-3">{item.summary}</p>
-
-      <div className="flex items-center">
-        <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold ${impact.className}`}>
-          {item.impact === "critical" && <AlertTriangle className="w-3 h-3" />}
-          {item.impact === "high" && <Minus className="w-3 h-3" />}
-          {(item.impact === "medium" || item.impact === "low") && <CheckCircle2 className="w-3 h-3" />}
-          {impact.label}
-        </span>
-      </div>
-    </motion.div>
-  );
-}
 
 function IntelligenceSection() {
-  return (
-    <Section id="intelligence" className="bg-[linear-gradient(180deg,transparent_0%,rgba(11,25,41,0.5)_50%,transparent_100%)]">
-      <SectionLabel>📡 Live Feed</SectionLabel>
-      <SectionTitle>Global Intelligence — Last 24h</SectionTitle>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-        {INTELLIGENCE_ITEMS.map((item, i) => <IntelligenceCard key={i} item={item} index={i} />)}
-      </div>
-    </Section>
-  );
+  return <LiveNewsFeed />;
 }
-// ── Sectors ─────────────────────────────────────────────────────────────────────
+
 function SectorCard({ sector, index }: { sector: typeof SECTORS[0]; index: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
@@ -295,9 +183,7 @@ function SectorsSection() {
     </Section>
   );
 }
-      {/* Personalized News Feed */}
 
-// ── How It Works ──────────────────────────────────────────────────────────────
 function WorkflowStep({ step, index }: { step: typeof WORKFLOW_STEPS[0]; index: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
@@ -336,7 +222,7 @@ function HowItWorksSection() {
     </Section>
   );
 }
-// ── Why It Matters ────────────────────────────────────────────────────────────
+
 const WHY_IT_MATTERS = [
   { title: "Understand World Events Faster", desc: "Cut through the noise of a 24/7 news cycle. Get synthesized, actionable briefings that highlight what genuinely moves the needle — not what just generates clicks." },
   { title: "Identify Global Shifts Early", desc: "Spot emerging trends in geopolitics, trade, and security before they become mainstream headlines. Early awareness is a strategic advantage." },
@@ -379,7 +265,6 @@ function WhyItMattersSection() {
   );
 }
 
-// ── Contact / Coming Soon ─────────────────────────────────────────────────────
 function ContactSection() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -438,7 +323,6 @@ function ContactSection() {
   );
 }
 
-// ── Footer ─────────────────────────────────────────────────────────────────────
 function Footer() {
   return (
     <footer className="px-6 py-10 border-t border-white/[0.06]">
@@ -455,7 +339,6 @@ function Footer() {
   );
 }
 
-// ── Page ───────────────────────────────────────────────────────────────────────
 export default function Home() {
   return (
     <main className="min-h-screen">
