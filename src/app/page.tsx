@@ -101,17 +101,16 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.15 }}
           className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[0.95]"
         >
-          <span className="text-white">Global Intelligence,</span>
+          <span className="text-white">The Digital</span>
           <br />
-          <span className="text-gradient-gold">Decoded Daily.</span>
+          <span className="text-gradient-gold">NewsRoom</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
           className="text-xl md:text-2xl text-slate-400 leading-relaxed mb-12 max-w-3xl mx-auto"
         >
-          AI-powered briefings that synthesize the most consequential developments
-          across geopolitics, security, economics, and diplomacy — every 24 hours.
+          A centralized hub for real-time global media. Beyond the 24h Media Loop, the platform differentiates through a personalized intelligence feed, distilling vast information streams into high-velocity, tailored insights to identify emerging narratives with precision.
         </motion.p>
 
         <motion.div
