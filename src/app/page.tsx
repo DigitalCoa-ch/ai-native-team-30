@@ -343,8 +343,8 @@ export default function Home() {
     <main className="min-h-screen">
       <Hero />
       <IntelligenceSection />
-      <SectorsSection />
       <PersonalizedNewsFeed />
+      <SectorsSection />
       <HowItWorksSection />
       <WhyItMattersSection />
       <ContactSection />
