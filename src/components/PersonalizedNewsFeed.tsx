@@ -29,21 +29,21 @@ const SIMULATED_NEWS = [
     title: "AI Agents Rewrite Enterprise Software Strategy",
     summary: "Autonomous AI agents are moving from prototype to production, forcing companies to rebuild core workflows around agent-native architectures.",
     category: "Technology",
-    careerImpact: "Your engineering background positions you to lead AI integration initiatives — a high-demand skill as organizations shift from demo projects to full deployment.",
+    careerImpact: "Your engineering background positions you to lead AI integration initiatives. A high-demand skill as organizations shift from demo projects to full deployment.",
   },
   {
     id: 2,
     title: "Remote-First Hiring Patterns Reshape Leadership Pipelines",
     summary: "Fortune 500 companies are scrapping traditional promotion ladders in favor of distributed leadership models that reward output over presence.",
     category: "Future of Work",
-    careerImpact: "With your remote collaboration experience, you're well-placed for roles that require managing globally distributed teams — an increasingly competitive advantage.",
+    careerImpact: "With your remote collaboration experience, you're well-placed for roles that require managing globally distributed teams. An increasingly competitive advantage.",
   },
   {
     id: 3,
     title: "Green Tech Infrastructure Billions Flow to Mid-Market",
     summary: "Sustainability-linked bonds and green CAPEX cycles are creating a talent squeeze in cleantech engineering and project management roles.",
     category: "Sustainability",
-    careerImpact: "Cross-functional leaders who bridge technical and business strategy are in short supply — your profile aligns with emerging executive opportunities in this sector.",
+    careerImpact: "Cross-functional leaders who bridge technical and business strategy are in short supply. Your profile aligns with emerging executive opportunities in this sector.",
   },
 ];
 

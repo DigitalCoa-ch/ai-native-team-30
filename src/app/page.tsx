@@ -223,9 +223,9 @@ function HowItWorksSection() {
 }
 
 const WHY_IT_MATTERS = [
-  { title: "Understand World Events Faster", desc: "Cut through the noise of a 24/7 news cycle. Get synthesized, actionable briefings that highlight what genuinely moves the needle — not what just generates clicks." },
+  { title: "Understand World Events Faster", desc: "Cut through the noise of a 24/7 news cycle. Get synthesized, actionable briefings that highlight what genuinely moves the needle not what just generates clicks." },
   { title: "Identify Global Shifts Early", desc: "Spot emerging trends in geopolitics, trade, and security before they become mainstream headlines. Early awareness is a strategic advantage." },
-  { title: "Support Smarter Decision-Making", desc: "Whether you are a policymaker, executive, researcher, or analyst — our platform gives you the contextual intelligence to make better-informed decisions." },
+  { title: "Support Smarter Decision-Making", desc: "Whether you are a policymaker, executive, researcher, or analyst our platform gives you the contextual intelligence to make better-informed decisions." },
   { title: "Stay Informed, Efficiently", desc: "A single daily briefing replaces hours of scanning disparate sources. Intelligence curated and delivered in minutes, not hours." },
 ];
 
@@ -275,7 +275,7 @@ function ContactSection() {
         <SectionTitle>Coming Soon</SectionTitle>
         <p className="text-lg text-slate-400 leading-relaxed mb-10">
           GlobeIntel is evolving rapidly. If you want early access, feature updates,
-          or want to join the intelligence conversation — leave your email below.
+          or want to join the intelligence conversation leave your email below.
         </p>
 
         {submitted ? (
@@ -328,10 +328,10 @@ function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <Globe className="w-5 h-5 text-gold" />
-          <p className="text-slate-500 text-sm">GlobeIntel — AI-Powered Global Intelligence</p>
+          <p className="text-slate-500 text-sm">GlobeIntel AI-Powered Global Intelligence</p>
         </div>
         <p className="text-slate-600 text-xs">
-          DigitalCoa AI Native Enterprise Lab — Team 30
+          DigitalCoa AI Native Enterprise Lab Team 30
         </p>
       </div>
     </footer>
