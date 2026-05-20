@@ -9,10 +9,10 @@ const SOURCES: NewsSource[] = [
 ];
 
 const FEEDS = [
-  { source: SOURCES[0], feedUrl: "https://feeds.reuters.com/reuters/topNews" },
-  { source: SOURCES[1], feedUrl: "http://feeds.bbci.co.uk/news/rss.xml" },
-  { source: SOURCES[2], feedUrl: "https://rsshub.app/apnews/topics/apf-topnews" },
-  { source: SOURCES[3], feedUrl: "http://rss.cnn.com/rss/edition.rss" },
+  { source: SOURCES[0], feedUrl: "https://feeds.reuters.com/reuters/worldNews" },
+  { source: SOURCES[1], feedUrl: "https://feeds.bbci.co.uk/news/world/rss.xml" },
+  { source: SOURCES[2], feedUrl: "https://feeds.a.pymntr.com/rss/apnews_rss.xml" },
+  { source: SOURCES[3], feedUrl: "https://feeds.a.pymntr.com/rss/cnn_rss.xml" },
 ];
 
 function parseFeedItem(item: any, source: NewsSource): NewsArticle | null {
